@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rideau Canal Skateway Monitoring Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <h1>Rideau Canal Skateway Monitoring Dashboard</h1>
+      <p>Real-time monitoring for Dow's Lake, Fifth Avenue, and NAC</p>
+    </div>
+    <div class="system-status-card">
+      <h2>System Status</h2>
+      <p id="overall-status" class="badge neutral">Loading...</p>
+      <p id="last-updated">Last updated: --</p>
+      <p id="data-source">Source: --</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Current Conditions</h2>
+      <div id="location-cards" class="cards-grid"></div>
+    </section>
+
+    <section class="charts-section">
+      <div class="chart-card">
+        <h2>Average Ice Thickness (Last Hour)</h2>
+        <canvas id="iceChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h2>Average Surface Temperature (Last Hour)</h2>
+        <canvas id="surfaceChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Auto-refresh every 30 seconds</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
