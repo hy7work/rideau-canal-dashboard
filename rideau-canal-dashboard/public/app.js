@@ -244,7 +244,8 @@ const trends = [
 const status = {
   overallStatus: "Safe",
   lastUpdated: new Date(),
-  dataSource: "Simulated Data"
+  //dataSource: "Simulated Data"
+  dataSource: "Cosmos"
 };
 
 
