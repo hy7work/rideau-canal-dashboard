@@ -180,16 +180,75 @@ function renderCharts(trends) {
  */
 async function loadDashboard() {
   // Fetch all APIs in parallel
-  const [latestRes, trendsRes, statusRes] = await Promise.all([
-    fetch('/api/latest'),
-    fetch('/api/trends'),
-    fetch('/api/status')
-  ]);
+
+  //const [latestRes, trendsRes, statusRes] = await Promise.all([
+  //  fetch('/api/latest'),
+  //  fetch('/api/trends'),
+  //  fetch('/api/status')
+  //]);
 
   // Convert responses to JSON
-  const latest = await latestRes.json();
-  const trends = await trendsRes.json();
-  const status = await statusRes.json();
+  //const latest = await latestRes.json();
+  //const trends = await trendsRes.json();
+  //const status = await statusRes.json();
+
+  // Mock data (simulate API)
+const latest = [
+  {
+    location: "Dow's Lake",
+    safetyStatus: "Safe",
+    avgIceThicknessCm: 32,
+    minIceThicknessCm: 28,
+    maxIceThicknessCm: 35,
+    avgSurfaceTemperatureC: -5,
+    avgExternalTemperatureC: -8,
+    maxSnowAccumulationCm: 12,
+    readingCount: 25,
+    windowEnd: new Date()
+  },
+  {
+    location: "NAC",
+    safetyStatus: "Caution",
+    avgIceThicknessCm: 18,
+    minIceThicknessCm: 15,
+    maxIceThicknessCm: 20,
+    avgSurfaceTemperatureC: -3,
+    avgExternalTemperatureC: -6,
+    maxSnowAccumulationCm: 8,
+    readingCount: 20,
+    windowEnd: new Date()
+  }
+];
+
+const trends = [
+  {
+    location: "Dow's Lake",
+    avgIceThicknessCm: 30,
+    avgSurfaceTemperatureC: -5,
+    windowEnd: new Date()
+  },
+  {
+    location: "Dow's Lake",
+    avgIceThicknessCm: 32,
+    avgSurfaceTemperatureC: -6,
+    windowEnd: new Date()
+  },
+  {
+    location: "NAC",
+    avgIceThicknessCm: 18,
+    avgSurfaceTemperatureC: -3,
+    windowEnd: new Date()
+  }
+];
+
+const status = {
+  overallStatus: "Safe",
+  lastUpdated: new Date(),
+  dataSource: "Simulated Data"
+};
+
+
+  
 
   // Update UI
   renderCards(latest);
