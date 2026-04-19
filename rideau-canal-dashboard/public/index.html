@@ -1,48 +1,92 @@
 <!DOCTYPE html>
+<!-- Declares the document type as HTML5 -->
 <html lang="en">
 <head>
+  <!-- Defines the character encoding for the document -->
   <meta charset="UTF-8" />
+
+  <!-- Makes the page responsive on different screen sizes -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title shown in the browser tab -->
   <title>Rideau Canal Skateway Monitoring Dashboard</title>
+
+  <!-- Links the external CSS stylesheet for page styling -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Loads the Chart.js library from CDN for drawing charts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- Page header section containing title, description, and system status -->
   <header class="page-header">
     <div>
+      <!-- Main dashboard title -->
       <h1>Rideau Canal Skateway Monitoring Dashboard</h1>
-      <p>Real-time monitoring for Dow's Lake, Fifth Avenue, and NAC</p>
+
+      <!-- Short description of the dashboard purpose -->
+      <p>Real-time envoronment monitoring for Dow's Lake, Fifth Avenue, and NAC</p>
+
+      <!-- Course/project information -->
+      <h5>CST8916 Remote Data and RT ApplicationsProject - Final Project</h5>
+
+      <!-- Student information -->
+      <h5>Student: Hesheng Yang 041094882</h5>
     </div>
+
+    <!-- Card showing the overall system status -->
     <div class="system-status-card">
-      <h2>System Status</h2>
+      <!-- Section title for current environment status -->
+      <h2>Current Environment Status</h2>
+
+      <!-- Overall status badge; value is filled dynamically by JavaScript -->
       <p id="overall-status" class="badge neutral">Loading...</p>
+
+      <!-- Displays the last update time; updated dynamically -->
       <p id="last-updated">Last updated: --</p>
+
+      <!-- Displays the data source; updated dynamically -->
       <p id="data-source">Source: --</p>
     </div>
   </header>
 
+  <!-- Main content area -->
   <main>
+    <!-- Section for current conditions by location -->
     <section>
       <h2>Current Conditions</h2>
+
+      <!-- Container where location cards are inserted dynamically by app.js -->
       <div id="location-cards" class="cards-grid"></div>
     </section>
 
+    <!-- Section for charts -->
     <section class="charts-section">
+      <!-- Card for ice thickness chart -->
       <div class="chart-card">
         <h2>Average Ice Thickness (Last Hour)</h2>
+
+        <!-- Canvas used by Chart.js to draw the ice thickness chart -->
         <canvas id="iceChart"></canvas>
       </div>
+
+      <!-- Card for surface temperature chart -->
       <div class="chart-card">
         <h2>Average Surface Temperature (Last Hour)</h2>
+
+        <!-- Canvas used by Chart.js to draw the surface temperature chart -->
         <canvas id="surfaceChart"></canvas>
       </div>
     </section>
   </main>
 
+  <!-- Footer section -->
   <footer>
+    <!-- Displays dashboard refresh interval -->
     <p>Auto-refresh every 30 seconds</p>
   </footer>
 
+  <!-- Links the external JavaScript file that handles dynamic dashboard logic -->
   <script src="app.js"></script>
 </body>
 </html>
